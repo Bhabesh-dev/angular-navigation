@@ -1,0 +1,6 @@
+.SideNaviagtion {
+  float: left;
+  width: 30%;
+  height: 100%; /* only for demonstration, should be removed */
+  padding: 20px;
+}

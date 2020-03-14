@@ -1,0 +1,33 @@
+<p>sidenav works!</p>
+<mat-card>
+  <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+    <mat-nested-tree-node *matTreeNodeDef="let node">
+      <li>
+        <div class="mat-tree-node">{{ node.item }}</div>
+      </li>
+    </mat-nested-tree-node>
+    <mat-nested-tree-node *matTreeNodeDef="let node; when: hasChildren">
+      <li>
+        <div class="mat-tree-node">
+          <button
+            mat-icon-button
+            matTreeNodeToggle
+            [attr.aria-label]="'toggle ' + node.filename"
+          >
+            <mat-icon>
+              {{
+                treeControl.isExpanded(node) ? "expand_more" : "chevron_right"
+              }}
+            </mat-icon>
+          </button>
+          <a routerLink="/Service/Sign_in">{{ node.item }} </a>
+        </div>
+        <ul>
+          <div *ngIf="treeControl.isExpanded(node)">
+            <ng-container matTreeNodeOutlet></ng-container>
+          </div>
+        </ul>
+      </li>
+    </mat-nested-tree-node>
+  </mat-tree>
+</mat-card>
