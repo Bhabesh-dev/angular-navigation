@@ -12,7 +12,9 @@ import { HomeComponent } from "./home/home.component";
 import { LoginComponent } from "./login/login.component";
 import { SidenavComponent } from "./sidenav/sidenav.component";
 
-import { HttpClientModule } from "@angular/common/http";
+import { MatSortModule } from "@angular/material/sort";
+
+import { HttpClientModule, HttpClient } from "@angular/common/http";
 import { ReactiveFormsModule } from "@angular/forms";
 import { MatNativeDateModule } from "@angular/material/core";
 import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
@@ -55,7 +57,7 @@ import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
 // import { MatDialogModule } from "@angular/material/dialog";
 // import { MatGridListModule } from "@angular/material/grid-list";
 // import { MatRippleModule } from "@angular/material/core";
-// import { MatTableModule } from "@angular/material/table";
+import { MatTableModule } from "@angular/material/table";
 // import { FormsModule } from "@angular/forms";
 // import { FlatTreeControl } from "@angular/cdk/tree";
 // import {
@@ -67,7 +69,10 @@ import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
 import { MaterialModule } from "./material-module";
 import { StaticnavComponent } from "./staticnav/staticnav.component";
 import { DummyComponent } from "./dummy/dummy.component";
-
+import { MatPaginatorModule } from "@angular/material/paginator";
+import { DataTableComponent } from "./data-table/data-table.component";
+import { CommonServicesService } from "src/common-services.service";
+import { StaticDataComponent } from './static-data/static-data.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -76,9 +81,14 @@ import { DummyComponent } from "./dummy/dummy.component";
     LoginComponent,
     SidenavComponent,
     StaticnavComponent,
-    DummyComponent
+    DummyComponent,
+    DataTableComponent,
+    StaticDataComponent
   ],
   imports: [
+    MatSortModule,
+    HttpClientModule,
+    MatPaginatorModule,
     // FlatTreeControl,
     // MatTreeFlattener,
     // MatTreeFlatDataSource,
@@ -111,7 +121,7 @@ import { DummyComponent } from "./dummy/dummy.component";
     // MatSliderModule,
     // MatSnackBarModule,
     // MatStepperModule,
-    // MatTableModule,
+    MatTableModule,
     // MatTabsModule,
     MatToolbarModule,
     // MatTooltipModule,
@@ -120,6 +130,7 @@ import { DummyComponent } from "./dummy/dummy.component";
     MatIconModule,
     MaterialModule
   ],
+  providers: [CommonServicesService],
 
   bootstrap: [AppComponent]
 })
