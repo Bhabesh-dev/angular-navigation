@@ -12,7 +12,7 @@ import { CommonServicesService } from "src/common-services.service";
 })
 export class DataTableComponent implements OnInit {
   @Input() path: string = "test-local";
-  @Input() filepath: string = "local-file";
+  //@Input() filepath: string;
   @Input() displayedColumns: any[] = [];
 
   // displayedColumns = ['name', 'company', 'bio', 'public_repos'];
@@ -27,13 +27,11 @@ export class DataTableComponent implements OnInit {
 
   ngOnInit() {
     this.dataSource = new MyDataSource(this.dataSubject);
+    //if (this.path !== undefined)
     this.apiService.getData(this.path).subscribe({
       next: value => this.dataSubject.next([value])
     });
-    this.dataSource = (data as any).default;
-  }
-  ngOnInitFile() {
-    this.dataSource = (data as any).default;
+    //if (this.filepath !== undefined) this.dataSource = (data as any).default;
   }
 }
 

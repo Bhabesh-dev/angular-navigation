@@ -1,4 +1,19 @@
-<p>static-data works!</p>
+<!-- <app-data-table
+  [path="'src/assets/car.json'"
+  ]
+  [displayedColumns]="['maker', 'year', 'model']"
+>
+</app-data-table> -->
 
-<app-data-table [filepath] [displayedColumns]="['maker', 'year', 'model']">
+<app-data-table
+  [path]="'https://api.github.com/users/bhabesh-dev'"
+  [displayedColumns]="[
+    'following',
+    'name',
+    'company',
+    'bio',
+    'public_repos',
+    'avatar_url'
+  ]"
+>
 </app-data-table>

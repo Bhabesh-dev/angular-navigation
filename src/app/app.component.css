@@ -1,0 +1,25 @@
+.sidenav {
+  width: 250px;
+  border-right: red;
+  padding: 10px;
+  border: royalblue;
+  height: 600px;
+  text-shadow: green;
+  float: left;
+}
+
+#container {
+  background-color: white;
+  width: 800px;
+}
+
+.mainsection {
+  width: 350px;
+  float: right;
+  height: 300px;
+  scroll-behavior: auto;
+}
+
+.footer {
+  clear: both;
+}

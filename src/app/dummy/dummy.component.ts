@@ -63,7 +63,7 @@ export class DummyComponent implements OnInit {
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
   constructor() {
-    const users = Array.from({ length: 25 }, (_, k) => createNewUser(k + 1));
+    const users = Array.from({ length: 5 }, (_, k) => createNewUser(k + 1));
 
     // Assign the data to the data source for the table to render
     this.dataSource = new MatTableDataSource(users);

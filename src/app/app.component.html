@@ -1,9 +1,17 @@
 <div id="header">
   <app-topnavbar></app-topnavbar>
 </div>
-<div>
-  <app-staticnav></app-staticnav>
+<br />
+<div id="container">
+  <div class="sidenav">
+    <app-staticnav></app-staticnav>
+  </div>
+  <div class="mainsection">
+    <router-outlet></router-outlet>
+  </div>
 </div>
-<div class="section">
-  <router-outlet></router-outlet>
+<div class="footer">
+  @copyright copy! Bhabesh-dev
 </div>
+<!-- <app-data-table [filepath="(]" [displayedColumns]="['maker', 'year', 'model']">
+</app-data-table> -->

@@ -69,10 +69,11 @@ import { MatTableModule } from "@angular/material/table";
 import { MaterialModule } from "./material-module";
 import { StaticnavComponent } from "./staticnav/staticnav.component";
 import { DummyComponent } from "./dummy/dummy.component";
-import { MatPaginatorModule } from "@angular/material/paginator";
 import { DataTableComponent } from "./data-table/data-table.component";
 import { CommonServicesService } from "src/common-services.service";
-import { StaticDataComponent } from './static-data/static-data.component';
+import { StaticDataComponent } from "./static-data/static-data.component";
+import { MatPaginatorModule } from "@angular/material/paginator";
+
 @NgModule({
   declarations: [
     AppComponent,
